@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body {
+            background-color: black;
+            color: yellow;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #paginaInicial {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            display: block;
+            margin-bottom: 20px;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            text-transform: uppercase;
+            color: yellow;
+            margin-bottom: 20px;
+        }
+
+        .botao {
+            background-color: #006400; /* Verde escuro */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .botao:hover {
+            background-color: #008000; /* Verde */
+            box-shadow: 0 0 20px yellow; /* Efeito de brilho */
+        }
+    </style>
+</head>
+<body>
+    <div id="paginaInicial">
+        <img src="https://i.ibb.co/v3zyWCz/1.png" alt="Logo" class="logo">
+        <h1>PELOTÃO DE INVESTIGAÇÕES CRIMINAIS</h1>
+        <button class="botao" onclick="redirecionarParaFormulario()">Iniciar</button>
+    </div>
+
+    <script>
+        function redirecionarParaFormulario() {
+            window.location.href = "formulario.html"; // Redireciona para formulario.html
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Ocorrência</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #222;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #000;
+            background-color: yellow;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #ccc;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"],
+        select,
+        textarea {
+            width: calc(100% - 10px);
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #555;
+            color: #fff;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin: 0 5px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .half-width {
+            width: calc(50% - 5px);
+            display: inline-block;
+        }
+
+        .green-btn {
+            background-color: green;
+        }
+
+        .red-btn {
+            background-color: red;
+        }
+
+        .gray-btn {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="section-title">Dados da Ocorrência</div>
+            <div>
+                <label for="numeroOcorrencia">Número de Ficha:</label>
+                <input type="text" id="numeroOcorrencia" name="numeroOcorrencia" placeholder="0000000/00" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="half-width">
+                <label for="data"><i class="fas fa-calendar-alt icon"></i>Data de Ocorrência:</label>
+                <input type="date" id="data" name="data" required>
+            </div>
+            <div class="half-width">
+                <label for="horaAcionamento"><i class="fas fa-clock icon"></i>Hora de Acionamento:</label>
+                <input type="time" id="horaAcionamento" name="horaAcionamento" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="omEnvolvida"><i class="fas fa-building icon"></i>OM Envolvida:</label>
+            <select id="omEnvolvida" name="omEnvolvida" required>
+                <option value="selecione">Selecione</option>
+                <option value="comando-militar-do-leste">COMANDO MILITAR DO LESTE</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tipoOcorrencia"><i class="fas fa-exclamation-triangle icon"></i>Tipo de Ocorrência:</label>
+            <select id="tipoOcorrencia" name="tipoOcorrencia" required>
+                <option value="">Selecione</option>
+                <option value="constatacoes">Constatações</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="half-width">
+                <label for="horaSaida"><i class="fas fa-sign-out-alt icon"></i>Hora de Saída:</label>
+                <input type="time" id="horaSaida" name="horaSaida" required>
+            </div>
+            <div class="half-width">
+                <label for="horaChegada"><i class="fas fa-sign-in-alt icon"></i>Hora de Chegada ao Local:</label>
+                <input type="time" id="horaChegada" name="horaChegada" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="local">Local:</label>
+            <input type="text" id="local" name="local">
+        </div>
+        <div class="form-group">
+            <label for="envolvido1">Envolvido1:</label>
+            <input type="text" id="envolvido1" name="envolvido1">
+        </div>
+        <div class="form-group">
+            <label for="envolvido2">Envolvido2:</label>
+            <input type="text" id="envolvido2" name="envolvido2">
+        </div>
+        <div class="form-group">
+            <label for="equipe">Equipe:</label>
+            <input type="text" id="equipe" name="equipe">
+        </div>
+        <div class="form-group">
+            <label for="perito">Perito:</label>
+            <input type="text" id="perito" name="perito">
+            <label for="motorista">Motorista:</label>
+            <input type="text" id="motorista" name="motorista">
+        </div>
+        <div class="form-group">
+            <label for="tecnicoPericia1">Técnico de Perícia 1:</label>
+            <input type="text" id="tecnicoPericia1" name="tecnicoPericia1">
+            <label for="tecnicoPericia2">Técnico de Perícia 2:</label>
+            <input type="text" id="tecnicoPericia2" name="tecnicoPericia2">
+        </div>
+        <div class="form-group">
+            <label for="viatura">Viatura:</label>
+            <input type="text" id="viatura" name="viatura">
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo">
+            <label for="placa">Placa/EB:</label>
+            <input type="text" id="placa" name="placa">
+        </div>
+        <div class="form-group">
+            <label for="equipSeguranca">Equipamentos de Segurança:</label>
+            <input type="text" id="equipSeguranca" name="equipSeguranca">
+        </div>
+        <div class="btn-container">
+            <button type="button" class="btn" onclick="limpar()"><i class="fas fa-eraser icon"></i>Limpar</button>
+            <button type="button" class="btn" onclick="cancelar()"><i class="fas fa-times icon"></i>Cancelar</button>
+            <button type="button" class="btn" onclick="concluir()"><i class="fas fa-check-circle icon"></i>Concluir</button>
+        </div>
+    </div>
+    <script>
+        function limpar() {
+            document.getElementById("data").value = "";
+            document.getElementById("numeroOcorrencia").value = "";
+            document.getElementById("horaAcionamento").value = "";
+            document.getElementById("omEnvolvida").value = "selecione";
+            document.getElementById("tipoOcorrencia").value = "";
+            document.getElementById("horaSaida").value = "";
+            document.getElementById("horaChegada").value = "";
+            document.getElementById("local").value = "";
+            document.getElementById("envolvido1").value = "";
+            document.getElementById("envolvido2").value = "";
+            document.getElementById("perito").value = "";
+            document.getElementById("motorista").value = "";
+            document.getElementById("tecnico1").value = "";
+            document.getElementById("tecnico2").value = "";
+            document.getElementById("modeloViatura").value = "";
+            document.getElementById("placaViatura").value = "";
+            document.getElementById("equipamentos").value = "";
+            document.getElementById("armamento").value = "";
+            document.getElementById("qtdMunicao").value = "";
+            document.getElementById("descricao").value = "";
+        }
+
+        function cancelar() {
+            window.location.href = "index.html";
+        }
+
+        function concluir() {
+            window.location.href = "historico.html";
+        }
+    </script>
+</body>
+</html>
